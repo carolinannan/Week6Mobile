@@ -51,3 +51,17 @@ function vibration(){
     navigator.vibrate(3000);
 
 }
+function cameraCallback (imageData) {     // vem de fora
+    var image = document.getElementById('MyImage');
+    image.scr = imageData;                                //primeiro criamos as function dps atributos
+                                                        // imagedata é a foto
+
+}
+
+function onError (errorMessage) {
+    console.log(errorMessage);
+}
+
+function takePicture() {
+    navigator.camera.getPicture(cameraCallback,onError);
+}
